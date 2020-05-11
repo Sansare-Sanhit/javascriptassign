@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>JavaScript practise</h1>
+        <button type="button" onclick="document.write('Sanhit')" >click here</button>
+        <p id="vita"></p>
+        <button type="button" onclick="document.write(name)" >click here</button>
+            <script>
+                window.alert("Sanhit");
+                console.log("Sanhit");
+                document.write("Sanhit");
+            
+            function myname(x,y,z)
+            {
+                if (x>y)
+                {
+                    if(x>z)
+                    return x;
+                
+                else 
+                 return z;
+            }
+                else if (y>z)
+                    return y;
+                else 
+                    return z;
+            }
+            document.getElementById("vita").innerHTML= myname(2,4,1);
+            
+        </script>
+    </body>
+</html>
