@@ -3,16 +3,28 @@
 <head></head>
 <body>
     <p id="one"></p><br/>
+    <button onclick=" document.getElementById('one').innerHTML='Sanhit Sansare.'">name appear here</button><br/><br/>
     <p id="two">sanhit sansare</p><br/>
+    <button onclick=" document.getElementById('two').style.fontSize='35px'">increase fontsize</button><br/><br/>
     <p id="three" style="display:none">Sanhit Sansare</p><br/>
-    <p id="four"></p><br>/
-    <input id="five" type="text" onkeyup="change();">content to be copied</input><br/>
-    <input id="six" type="text"></input><br/>
-    <button onclick=" document.getElementById('one').innerHTML='Sanhit Sansare.'">name appear here</button>
-    <button onclick=" document.getElementById('two').style.fontSize='35px'">increase fontsize</button>
-    <button onclick=" document.getElementById('three').style.display='block'">Unhide name</button>
-    <button onclick=" document.getElementById('four').innerHTML=Date()">Display Date</button>
-    <button onclick=" document.getElementById('six').innerHTML='change()'">copy</button>
+    <button onclick=" document.getElementById('three').style.display='block'">Unhide name</button><br/><br/>
+    <p id="four"></p><br/>
+    <button onclick=" document.getElementById('four').innerHTML=Date()">Display Date</button><br/><br/>
+    <input id="five" type="text" onkeyup="change();">content to be copied by onkeyup event</input><br/>
+    <input id="six" type="text"></input><br/><br/><br/>
+    <input type="text" id="nine" >text copied by clicking button</input>
+    <input type="text" id="ten"></input>
+    <button type="button" onClick="copyTxt()">Click here to copy the text</button><br/><br/>
+    <p id="seven">11,33,657,234,21,78,57</p><br/>
+    <button type="button" onClick="numAsc()">Click here to arrange numbers</button><br/><br/>
+    <input type="text" id="inEmail">Enter your Email:</input>
+    <button type="button" onClick="valEmail()">Validate E-mail ID</button><br/><br/>
+    <p id="eight">Akash,Nirmal,Shri,Nilesh,Ojas</p><br/>
+    <button type="button" onClick="nameDesc()">Click here to arrange names in desc order</button><br/><br/>
+    <h4> Generating the highest number </h4><br/>
+     Numbers: 22,11,33,56,22,77,22,55,86,23 <br/>
+    <button type="button" onclick="maxNum()">!!Get the highest number on alert!!</button>
+    
     <script>
         function change()
         {
@@ -20,7 +32,42 @@
             var dest=document.getElementById("six");
             dest.value=src.value;
         }
-        
+         function numAsc()
+        {
+            var arr = [11,33,657,234,21,78,57];
+            var srt = arr.sort(function(a,b){return a-b});
+            document.getElementById("seven").innerHTML = srt;
+        }
+         function nameDesc()
+        {
+            var arr = ["Akash","Nilesh","Nirmal","Ojas","Shri"];
+            var srt = arr.reverse();
+            document.getElementById("eight").innerHTML = srt;
+        }
+         function valEmail()
+        {
+                var str = document.getElementById("inEmail").value;
+                if(str.search("@") < 0)
+            {
+                window.alert("Please enter valid E-mail, \"@\" not found");
+            }
+                else
+            {
+                window.alert("Email is valid!");
+            }
+        }
+         function maxNum()
+        {
+            var arr=[22,11,33,56,22,77,22,55,86,23];
+            arr.sort(function(a,b){return b-a});
+            var max=arr[0];
+            window.alert(max);  
+        }
+         function copyTxt()
+        {
+            var txt=document.getElementById("nine").value;
+            document.getElementById("ten").value = txt;
+        }
        
     </script>
     
