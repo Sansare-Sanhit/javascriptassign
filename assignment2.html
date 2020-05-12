@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <p id="one"></p><br/>
+    <p id="two">sanhit sansare</p><br/>
+    <p id="three" style="display:none">Sanhit Sansare</p><br/>
+    <p id="four"></p><br>/
+    <input id="five" type="text" onkeyup="change();">content to be copied</input><br/>
+    <input id="six" type="text"></input><br/>
+    <button onclick=" document.getElementById('one').innerHTML='Sanhit Sansare.'">name appear here</button>
+    <button onclick=" document.getElementById('two').style.fontSize='35px'">increase fontsize</button>
+    <button onclick=" document.getElementById('three').style.display='block'">Unhide name</button>
+    <button onclick=" document.getElementById('four').innerHTML=Date()">Display Date</button>
+    <button onclick=" document.getElementById('six').innerHTML='change()'">copy</button>
+    <script>
+        function change()
+        {
+            var src=document.getElementById("five");
+            var dest=document.getElementById("six");
+            dest.value=src.value;
+        }
+        
+       
+    </script>
+    
+</body>
+</html>
