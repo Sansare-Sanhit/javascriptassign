@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h3>assignment 3 javascript</h3>
+    <p id="two"></p>
+    <input id="one" type="text" ></input>
+    <button type="button" onclick="fact()">find factorial</button><br/><br/>
+    <script>
+        function fact()
+            {
+                var num = document.getElementById("one").value;
+                var cfact;
+                cfact = num => { return factorial(num);}
+                document.getElementById("two").innerHTML=cfact(num);
+                function factorial(num)
+                    {
+                        if(num<=1){return num;}
+                        else{
+        
+                                 return num*factorial(num-1);
+                            }
+    
+                    }
+            }
+    
+    class Account
+    {
+    constructor(name,bal)
+    {
+        this.accountname=name;
+        this.accountbal=bal;
+    }
+    deposit(amt)
+    {
+        this.accountbal+=amt;
+    }
+    display()
+    {
+        window.alert("Account holder's name: " + this.accountname + "Account balance: " + this.accountbal);
+    }
+}
+var per1 = new Account("Sunil",1000);
+var per2 = new Account("Yash",1500);
+per1.deposit(1000);
+per2.deposit(5000);
+per1.display();
+per2.display();
+
+class math
+{
+    constructor(num)
+    {
+        this.mathnum=num;
+    }
+    static square(x)
+    {
+        return (x.mathnum*x.mathnum);
+    }
+    static cube(x)
+    {
+        return (x.mathnum*x.mathnum*x.mathnum);
+    }
+}
+var a= new math(5);
+var b= new math(7);
+window.alert(math.square(a));
+window.alert(math.cube(a));
+window.alert(math.square(b));
+window.alert(math.cube(b));
+</script>
+    
+</body>
