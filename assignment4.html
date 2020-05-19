@@ -1,0 +1,46 @@
+<!doctype html>
+<html> 
+<head>
+<title>Form Validation</title>
+</head>
+<body> 
+<h2>Form Validation</h2>
+<fieldset>
+<legend align="center"><h3>Form</h3></legend> 
+<form method = "POST" onsubmit="return formValidation()">  
+Enter a user ID: <input type="text" id="uname" required/><br/><br/>      
+Enter a password: <input type="password" id="pwd" required/><br/><br/>      
+Enter your mobile number:<input type="number" id="mob" required/><br/><br/>     
+Enter your address: <textarea id="add" rows="5" cols="25" required></textarea><br/><br/>      
+Enter your age: <input type="number" id="age" min="18" max="100" required/><br/><br/>   
+<input type="submit" value="Submit"/>
+&nbsp;
+&nbsp;
+<input type="reset" value="Reset"/>  
+</form>  
+</fieldset>
+<script>   
+function formValidation()   {   
+    var user = document.getElementById("uname").value;  
+    var pass = document.getElementById("pwd").value;    
+    var mobile = document.getElementById("mob").value;        
+    if(user.length < 3 || user.length > 15)    
+    {
+         window.alert("Username should have minimum 3 and maximum 15 characters");     
+         return false;    
+    }else if(pass.length < 8)    
+    {     
+        window.alert("Password should be of minimum 8 characters in length");     
+        return false;    
+    }
+    else if(mobile.length != 10)    
+    {
+         window.alert("Phone number should have 10 digits");     
+         return false;    
+    }
+         else     
+         return true;   
+    }  
+    </script> 
+    </body>
+    </html>
