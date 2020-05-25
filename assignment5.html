@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head></head>
+<html>
+<body>
+    <script>
+        class Employee{
+            constructor(id,name,salary){
+                this.id=id;
+                this.name=name;
+                this.salary=salary;
+            }
+            get ID(){
+                return this.id;
+            }
+            set ID(x){
+                this.id=x;
+            }
+            get name(){
+                return this._name;
+            }
+            get salary(){
+                return this._salary;
+            }
+            set name(n){
+                this._name=n;
+            }
+            set salary(s){
+                this._salary=s;
+            }
+            net_salary(){
+                var net = (this.salary*10)/100;
+                return net = this.salary - net;
+            }
+
+            }
+//creating object for class Employee.
+
+            var employee1= new Employee(1,"Sanhit",50000);
+            var employee2= new Employee(2,"Nirmal",70000);
+            window.alert(employee1.net_salary());
+            window.alert(employee2.net_salary());   
+            employee1.salary=80000;//using setter method the values of properties can be changed.
+            window.alert(employee1.salary);
+            window.alert(employee1.net_salary());
+    </script>
+
+
+
+    <script>
+    class student{
+        constructor(rn,n,m1,m2,m3)
+        {
+            this.rollno=rn;
+            this.name=n;
+            this.marks1=m1;
+            this.marks2=m2;
+            this.marks3=m3;
+            this.total = function()
+            {
+                return this.marks1 + this.marks2 + this.marks3;
+            }
+            this.percentage = function()
+            {
+                return this.total() * 100/300;
+            }
+        }
+
+    }
+    
+// creating object for class student..
+var a=new student(1,"Nirmal", 95, 91, 89);
+var b=new student(2,"Sanhit", 88, 95, 87);
+window.alert("Roll No: "+a.rollno+"<br>"+"Name: "+a.name+"<br>"+"Marks: "+a.marks1+","+a.marks2+","+a.marks3+"<br>"+"Total Marks: "+a.total()+"<br>"+"Percentage:"+a.percentage())
+window.alert("Roll No: "+b.rollno+"<br>"+"Name: "+b.name+"<br>"+"Marks: "+b.marks1+","+b.marks2+","+b.marks3+"<br>"+"Total Marks: "+b.total()+"<br>"+"Percentage:"+b.percentage())
+</script>
+<h1>Javascript (use of classes) </h1>
+</body>
+</html>
+    
