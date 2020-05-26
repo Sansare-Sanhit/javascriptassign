@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        
+            <p>Sum of all arguments:</p><br>
+<p id="one"></p><br>
+<p id="two"></p><br>
+<p id="three"></p><br>
+
+
+<script>
+function sum() {
+  var i;
+  var sum = 0;
+  for(i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+document.getElementById("one").innerHTML = sum(1, 123, 500, 115, 44, 88);
+</script>
+<script>
+    function nam(x){
+        return "my name is " + x; 
+    }
+    document.getElementById("two").innerHTML = nam("Sanhit Sansare");
+
+    function square(s){
+        return s*s;
+    }
+    document.getElementById("three").innerHTML = square(5);
+</script>
+
+    </body>
+</html>
