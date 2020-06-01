@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="one" style="color:red;">Sanhit Sansare</p>
+        <button onclick="document.getElementById('one').style.color='blue'">click</button><br/><br/>
+        <h id="two" style="text-align: left;">Sanhit Sansare in left</h1><br/>
+        <button onclick="document.getElementById('two').style.alignText='right' ">click</button><br/><br/>
+        <style>
+            .three{
+                background-color: blue;
+                color:white;
+            }
+            .four{
+                background-color: white;
+                color:blue;
+            }
+        </style>
+        <p class="three" >this is a paragraph tag</p><br/>
+        <button type="button" onclick="One()">click</button><br/><br/>
+
+        <script>
+            function One(){
+                document.body.style.backgroundColor="white";
+                document.getElementsByClassName("three").style.color = "blue";
+            }
+            
+            
+        </script>
+
+
+        <form>
+            Name:<input id="four" type="text" >
+        red:<input type="radio" onclick="getElementById('four').style.color='red'" >
+        blue:<input type="radio" onclick="getElementById('four').style.color='blue'">
+        green:<input type="radio" onclick="getElementById('four').style.color='green'"><br/><br/>
+        </form><br/>
+        
+        
+        <p id="five">Sanhit Sansare</p>
+        
+            choose a nos:<select id="six" onchange="changesize()" >
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+                 </select><br/><br/><br/>
+        
+        <script>
+            function changesize(){
+                var size = document.getElementById("six").value;
+                document.getElementById("five").style.fontSize = size + 5;
+            }
+        </script>
+
+Number 1: <input type="text" id="num1" onchange="calculate()"></input>
+Number 2: <input type="text" id="num2" onchange="calculate()"></input>
+Result: <input type="text" id="num3"></input>
+
+<input type="radio" name="calc" id="add" onchange="calculate()">Addition</input>
+<input type="radio" name="calc" id="subs" onchange="calculate()">Substraction</input><br/><br/>
+
+<script>
+    function calculate(){
+                  var n1,n2,res;
+                  n1 = document.getElementById("num1").value;
+                  n1 = parseInt(n1);
+                  n2 = document.getElementById("num2").value;
+                  n2 = parseInt(n2);
+                  var x = document.getElementsByName("calc");
+                  if(x[0].checked)
+                  {
+                      res = n1+n2;
+                      document.getElementById("num3").value = res;
+                  }
+                  if(x[1].checked)
+                  {
+                      res = n1 - n2;
+                      document.getElementById("num3").value = res;
+                  }
+              }
+</script>
+<div id="seven">
+    <p>
+        Hello,<br/><br/>
+    </p>
+    <p>
+        i am Sanhit Sansare and have completed my enginnering in electronics and telecommunication. <br/>
+        i am currently pursuing Diploma in Advanced Computing (DAC) course from VITA. <br/><br/>
+    </p>
+    <p>
+        This is a sentence this is a sentence This is a sentence this is a sentence<br/><br/>
+    </p>
+    <p>
+        This is a sentence this is a sentenceThis is a sentence this is a sentenceThis is a sentence this is a sentence.<br/><br/>
+    </p>
+    <div><br/><br/>
+    
+    <button type="button" onclick="change()">Click to change!</button><br/><br/>
+    Number of "p" tags: <span id="disp"></span>
+<script>
+    function change(){
+        var x= document.getElementById("seven");
+        var p = x.getElementsByTagName("p");
+        var cnt = p.length;
+        document.getElementById("disp").innerHTML = cnt;
+        for(let i = 0 ; i < p.length ; i++){
+            p[i].style.backgroundColor = "blue";
+        }
+    }
+</script>
+
+<ol id="eight">
+    <li>NIRMAL</li>
+    <li>SANHIT</li>
+    <li>OJAS</li>
+    <li>SHRIDHAR</li>
+</ol>
+<button type="button" onclick="first()">Remove 1st name</button><br/><br/>
+<script>
+    var list = document.getElementById("eight").childNodes;
+    function first(){
+        list[0].remove();
+    }
+</script>
+
+<h3>coying text to span tag</h3>
+<input type="text" id="nine" onchange="copyText()"></input>
+        <span id="ten"></span>
+        <script>
+            function copyText(){
+                var txt = document.getElementById("nine").value;
+                document.getElementById("ten").innerHTML = txt;
+            }
+        </script>
+
+
+<h5>dont keep text box empty</h5>
+<input type="text" id="eleven" onchange="validate()"></input>
+<span id="twelve"></span><br/><br/>
+<script>
+    function validate(){
+        var txt = document.getElementById("eleven").value;
+        if(txt == ""){
+            document.getElementById("twelve").innerHTML = "You cannot keep the text box empty!";
+        }
+        else{
+            document.getElementById("twelve").innerHTML = "";
+        }
+    }
+</script>
+
+<h3>Enter password:</h3>
+<h5>Password rules:</h5><br/>
+<ul>
+    <li>It must have at least one capital character.</li>
+    <li>It must have at least one digit.</li>
+    <li>It must have at least 1 special symbol.</li>
+</ul>
+<input type="text" id="intxt" onchange="validatePass()"></input><br/>
+<span>Errors in you password:</span>
+<span class="output" id="outtxt"></span><br/><br/>
+<script>
+    function validatePass(){
+        var caseFlag = 0;
+        var numFlag = 0;
+        var symFlag = 0;
+        var msg = "<br/>";
+        var txt = document.getElementById("intxt").value;
+        var patt1 = /[!-/]/g;
+        var patt2 = /[:-@]/g;
+        var patt3 = /[0-9]/g;
+        var patt4 = /[A-Z]/g;
+        if(txt.match(patt3)){msg = msg + ""; }
+        else{msg = msg + "<br/>" + "No numbers found!";}
+
+        if(txt.match(patt4)){msg = msg + ""; }
+        else{msg = msg + "<br/>" + "No capital letter found!";}
+
+        if(txt.match(patt2)){msg = msg + ""; }
+        else if(txt.match(patt1)){msg = msg + ""; }
+        else{msg = msg + "<br/>" + "No symbol found!";}
+
+        document.getElementById("outtxt").innerHTML = msg;
+    }
+</script>
+
+
+<table border="1" id="tab" align="center">
+    <tr bgcolor="orange">
+        <td>Sr. No.</td>
+        <td>Book name</td>
+        <td>Book price</td>
+        <td>Add to cart</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Work Ethics</td>
+        <td>Rs. 199</td>
+        <td><input name="books" type="checkbox" value="199" onchange="calc()"></input></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Do it Today</td>
+        <td>Rs. 99</td>
+        <td><input name="books" type="checkbox" value="99" onchange="calc()"></input></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Be a Human Calculator</td>
+        <td>Rs. 49</td>
+        <td><input name="books" type="checkbox" value="49" onchange="calc()"></input></td>
+    </tr>
+</table>
+<br/><br/><br/>
+CART: <br/>
+<table border="1" align="center">
+    <tr>
+        <th>Number of items added to cart:</th>
+        <td><span id="nitems">0</span></td>
+    </tr>
+    <tr>
+        <th>Total amount:</th>
+        <td>Rs.<span id="pitems">0</span></td>
+    </tr>
+</table>
+<script>
+    function calc(){
+        var total = 0;
+        var nitems = 0;
+        var amt = document.getElementsByName("books");
+       for(let i = 0 ; i < amt.length ; i++){
+        if(amt[i].checked){
+            total = parseFloat(total);
+            let x =  amt[i].value;
+            x = parseFloat(x);
+            total = total + x;
+            nitems += 1;
+        }
+       }
+       document.getElementById("nitems").innerHTML = nitems;
+       document.getElementById("pitems").innerHTML = total;
+    }
+</script>
+       
+    </body>
+</html>
