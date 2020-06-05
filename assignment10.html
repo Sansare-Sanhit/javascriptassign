@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <script src="jquery.js"></script>
+                <script>
+                        $(document).ready(function() {
+                                $("button").click(function(){
+                                        $("img").toggle();
+                                });
+                        });
+                </script>
+                <script>
+                        $(document).ready(function(){
+                                $("p").mouseover(function(){
+                                        $("p").hide()
+                                });
+                                $("p").mouseout(function(){
+                                        $("p").show()
+                                });
+                        });
+                </script>
+                <script>
+                        $(document).ready(function(){
+                                $("h1").mouseenter(function(){
+                                        $("h1").css("border",'3px solid red')
+                                });
+                        });
+                </script>
+                <script>
+                        $(document).ready(function() {
+                                $("input").blur(function() {
+                                        $(this).css("background-color", "grey")
+                                });
+                        });
+                </script>
+                <script>
+                        $(document).ready(function() {
+                                $("input:last").focus(function() {
+                                        $(this).css("color", "green")
+                                });
+                        });
+                       </script>
+        </head>
+        <body>
+                <img  style= width:250px src="testimage.jpg">
+                <button>click me</button><br/><br/>
+                <p>I am Sanhit Sansare. this is a paragraph<br/>
+                        this is a paragraph this is a paragraph<br/>
+                        this is a paragraph this is a paragraph
+                </p>
+                <h1 style=color:blue>Sanhit Sansare</h1><br/>
+                <input type="input"><br/><br/>
+                Enter your name:<input type="text">
+                </body>
+</html>

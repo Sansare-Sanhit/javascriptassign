@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><title>stopwatch assign8</title>
+    <head></head>
+        <body>
+            <h1><p id="one"></p></h1>
+            <button class="test" type="button" onclick="window.open('testimage.jpg')"><h1>show image</h1></button>
+            
+<script>
+    var myVar = setInterval(myTimer ,1000);
+    function myTimer() {
+      var d = new Date();
+      document.getElementById("one").innerHTML = d.toLocaleTimeString();
+    }
+    </script>
+        </body>
+</html>

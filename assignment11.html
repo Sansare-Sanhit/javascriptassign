@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#one").mouseover(function(){
+                    $("#one").fadeOut(3000)
+                });
+            }); 
+        </script>
+        <script>
+            $(document).ready(function(){
+               $("#button").click(function(){
+                     $("#two").slideUp("slow");
+                         $("#two").slideDown("slow");
+                 });
+            });
+           </script>
+           <script>
+                 $(document).ready(function(){
+                    $("#three").click(function(){
+                        $("img").animate({
+                            height: '+=100px',
+                                width: '+=150px'
+                    });
+                });
+            })
+           </script>
+           <script>
+                $(document).ready(function(){
+                    $("button:last").click(function(){
+                        $("p").hide("slow", function(){
+                            alert("paragrapgh is been hided");
+                    });
+                });
+            });
+            </script>
+
+    </head>
+    <body>
+        <h1 id="one" style="position:absolute">Sanhit Sansare</h1><br/><br/><br/>
+        <h3 id="two">Sanhit Sansare</h3>
+        <button id="button">Click here!!</button><br/><br/>
+        <img src="testimage.jpg" style="width:250px"><br><br>
+        <button id="three">Click here!!</button><br/><br/>
+        <p><b>to hide this paragraph click the button below</b></p><br>
+        <button>Click here!!</button>
+    </body>
+</html>
