@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function (){
+                $("#three").click(function (){
+                    var x= $("#one").val();
+                        $("#two").val(x);
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("#four").mouseover(function(){
+                    $("#four").css("border","none")
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $(":radio:first").click(function(){
+                    $("ul").append("<li> kiwi</li>");
+                    });
+                    $("#eight").click(function(){
+                    $("ul").append("<li> watermelon</li>");
+                    });
+
+                });
+            
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("p").remove();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("#six").click(function(){
+                    $("#five").css("color","green");
+                });
+                $("#seven").click(function(){
+                    $("#five").css("color","blue");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input id="one" type="text">
+        <input id="two" type="text">
+        <button id="three" type=button>click me to copy</button><br/><br/>
+        <style>
+            img{
+                width:350px;
+                border-style:double;
+            }
+        </style>
+        <img id="four" src="testimage.jpg" ><br/><br/>
+        <ul>
+            <li>apple</li>
+            <li>mango</li>
+            <li>banana</li>
+        </ul>
+        <input type="radio" >kiwi</input>
+        <input id="eight" type="radio" >watermelon</input><br/><br/>
+        <p>this is paragrapgh<br/> will be removed after clicking the below button</p>
+        <button type="button">click me</button><br/>
+        enter name:<input type="text" id="five">
+        <input id="six" type="radio" >green
+        <input id="seven" type="radio" >blue
+    </body>
+</html>
